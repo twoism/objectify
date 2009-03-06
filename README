@@ -16,7 +16,7 @@ script/generate objectify Post
 Installation
 =======
 
-script/plugin install 
+script/plugin install git://github.com/twoism/objectify.git
 
 
 Copyright (c) 2009 twoism, released under the MIT license
