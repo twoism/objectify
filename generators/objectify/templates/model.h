@@ -3,7 +3,7 @@
 def objc_type type
 	case 
 		when type.match(/^int/)
-			"NSInteger"
+			"NSNumber"
 		when type.match(/varchar/)
 			"NSString"
 		when type.match(/tinyint/)
@@ -23,7 +23,7 @@ end
 	<%- unless col.name == "id" -%>
 	<%=objc_type col.sql_type%> *<%= col.name.camelize(:lower) -%>;
 	<%- else -%>
-	NSString *<%= file_name.camelize(:lower) -%>Id;
+	<%=objc_type col.sql_type%> *<%= file_name.camelize(:lower) -%>Id;
 	<%- end -%>
 <% end %>
 }
