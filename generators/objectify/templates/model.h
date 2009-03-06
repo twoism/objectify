@@ -23,7 +23,7 @@ end
 	<%- unless col.name == "id" -%>
 	<%=objc_type col.sql_type%> *<%= col.name.camelize(:lower) -%>;
 	<%- else -%>
-	<%=objc_type col.sql_type%> *<%= file_name.camelize(:lower) -%>Id;
+	NSString *<%= file_name.camelize(:lower) -%>Id;
 	<%- end -%>
 <% end %>
 }
