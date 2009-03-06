@@ -1,4 +1,4 @@
-#import "<%=file_name.camelize%>"
+#import "<%=file_name.camelize%>.h"
 <%-
 def do_synth mdl
 	file_name.camelize.constantize.columns.inject("") do |str,col|
