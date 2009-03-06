@@ -1,0 +1,22 @@
+Objectify
+=========
+
+Generators for ObjectiveResource.
+
+This generator reads in an existing model and generates the header and implementation
+files for ObjectiveResource Models.
+
+
+Example
+=======
+
+script/generate objectify Post
+
+
+Installation
+=======
+
+script/plugin install 
+
+
+Copyright (c) 2009 twoism, released under the MIT license
