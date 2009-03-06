@@ -18,4 +18,8 @@ end
 @implementation <%=file_name.camelize%>
 @synthesize <%=do_synth file_name%>
 
++ (NSString *)getRemoteCollectionName {
+	return @"<%=file_name.pluralize%>";
+}
+
 @end
