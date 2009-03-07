@@ -1,29 +1,11 @@
 #import "ObjectiveResource.h"
-<%-
-def objc_type type
-	case 
-		when type.match(/^int/)
-			"NSNumber"
-		when type.match(/varchar/)
-			"NSString"
-		when type.match(/tinyint/)
-			"NSString"
-		when type.match(/text/)
-			"NSString"
-		when type.match(/date/)
-			"NSDate"
-		else
-			"NSString"
-		end
-end 
--%>
 
 @interface <%= file_name.camelize %> : NSObject {
 <%- file_name.camelize.constantize.columns.each do |col| -%>
 	<%- unless col.name == "id" -%>
-	<%=objc_type col.sql_type%> *<%= col.name.camelize(:lower) -%>;
+	<%=objc_type col.type%> *<%= col.name.camelize(:lower) -%>;
 	<%- else -%>
-	NSString *<%= file_name.camelize(:lower) -%>Id;
+	<%=objc_type col.type%> *<%= file_name.camelize(:lower) -%>Id;
 	<%- end -%>
 <% end %>
 }
